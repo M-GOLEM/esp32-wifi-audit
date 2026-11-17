@@ -108,10 +108,3 @@ This firmware is intended for **research, education, and authorized penetration 
 ## License
 
 Distributed under the MIT License. See `LICENSE` for details. The `wsl_bypasser` component is an open-source component authored by Mr.Glint
-
----
-
-<div align="center">
-  <sub>Built by <a href="https://github.com/M-GOLEM"><b>Mr.GOLEM</b></a> ·
-  watch the work on <a href="https://www.youtube.com/@golemsec">YouTube — GOLEM SEC</a></sub>
-</div>
