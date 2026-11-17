@@ -5,6 +5,14 @@
 ![Target](https://img.shields.io/badge/Target-ESP32-E7352C?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square)
 
+> [!WARNING]
+> **Authorized testing only.** Deauthentication, disassociation and DoS frames
+> disrupt every device on the targeted channel, including neighbours' networks
+> and emergency calls. In most jurisdictions this is illegal without explicit,
+> written permission from the network owner. Only use this firmware on networks
+> you own or have a signed engagement to test, in an RF-shielded or isolated
+> lab. The authors do not provide support for misuse.
+
 > ESP-IDF firmware for wireless auditing on the ESP32: scanning, sniffing, frame analysis, and capture serialization.
 
 A modular C firmware that turns an ESP32 into a Wi-Fi auditing tool. It scans access points, sniffs air traffic, parses raw 802.11 frames, and exports captures in `pcap` (Wireshark) and `hccapx` (crack tool) formats - all controllable from an on-device web dashboard.
@@ -76,6 +84,20 @@ On Windows + WSL, use the `wsl_bypasser` component to simplify the toolchain set
 Each component ships its own `README.md` with implementation details.
 
 ---
+
+## Legal and safety notes
+
+- Deauth/DoS floods, handshake capture and PMKID capture are **auditing**
+  techniques for networks you are authorized to test. They are not a way to
+  "check" a neighbour's Wi-Fi.
+- Radio interference is regulated. Transmitting on channels you do not own can
+  violate spectrum rules even when no data is captured.
+- Captured handshakes may contain personal data. Store them encrypted, delete
+  them when the engagement ends, and never publish them.
+- The web dashboard has **no authentication**. Run the device on an isolated
+  network or your own hotspot; never expose it to the internet.
+- The hccapx export is provided for offline analysis by the network owner, not
+  for cracking third-party networks.
 
 ## Disclaimer
 
